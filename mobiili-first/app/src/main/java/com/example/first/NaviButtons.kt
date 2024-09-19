@@ -43,7 +43,7 @@ fun NaviButtons(navController: NavController) {
             Text("Viikkotehtävät")
             Spacer(modifier = Modifier.height(6.dp))
             Row(
-                modifier = Modifier.padding(top = 2.dp).padding(horizontal = 22.dp)
+                modifier = Modifier.padding(top = 2.dp).padding(horizontal = 3.dp)
             ) {
 
                 Button(onClick = {
@@ -54,9 +54,16 @@ fun NaviButtons(navController: NavController) {
 
                 Button(onClick = {
                     navController.navigate("loginform")
-                }) {
+                }, modifier = Modifier.padding(end = 8.dp)) {
                     Text(text = "3")
                 }
+
+                Button(onClick = {
+                    navController.navigate("calories")
+                }) {
+                    Text(text = "5")
+                }
+
             }
         }
     }

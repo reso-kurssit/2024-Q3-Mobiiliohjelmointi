@@ -47,7 +47,7 @@ fun LoginForm(navController: NavController) {
         modifier = Modifier.padding(8.dp)
     ) {
         Text(
-            text = stringResource(R.string.titleWeek2),
+            text = stringResource(R.string.titleWeek3),
             fontSize = 24.sp,
             color = MaterialTheme.colorScheme.primary,
             textAlign = TextAlign.Center,
