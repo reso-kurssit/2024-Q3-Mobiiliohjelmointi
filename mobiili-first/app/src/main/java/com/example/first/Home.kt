@@ -41,13 +41,13 @@ fun Home(navController: NavController) {
         Row(modifier = textModifier) {
             Text(text = "- Viikko 2: BMI -muunnin, ")
             Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikosta", modifier = Modifier.padding(start = 4.dp))
+            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
         }
 
         Row(modifier = textModifier) {
             Text(text = "- Viikko 3: Kirjautumislomake, ")
             Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikosta", modifier = Modifier.padding(start = 4.dp))
+            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
         }
 
         Text (text = "- Viikko 4: Teemat, integroitu sovellukseen", modifier = textModifier)
@@ -55,10 +55,10 @@ fun Home(navController: NavController) {
         Row(modifier = textModifier) {
             Text(text = "- Viikko 5: Kalorit -laskuri, ")
             Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikosta", modifier = Modifier.padding(start = 4.dp))
+            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
         }
 
-        Text (text = "- Viikko 6: Tulossa", modifier = textModifier)
+        Text (text = "- Viikko 6: Scaffold -navigaatio, integroitu sovellukseen", modifier = textModifier)
         Text (text = "- Viikko 7: Tulossa", modifier = textModifier)
         Text (text = "- Viikko 8: Tulossa", modifier = textModifier)
         Text (text = "- Sovellusharjoitus: eri sovellus", modifier = textModifier)

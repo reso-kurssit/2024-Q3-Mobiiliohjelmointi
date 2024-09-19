@@ -1,17 +1,16 @@
 package com.example.first
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -19,8 +18,16 @@ import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextAlign
 import com.example.first.ui.theme.SolidBlue
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.sp
 
+val customFont = FontFamily(
+    Font(R.font.dancingscript)
+)
 
 @Composable
 fun NaviButtons(navController: NavController) {
@@ -31,15 +38,36 @@ fun NaviButtons(navController: NavController) {
             .fillMaxWidth()
             .padding(0.dp)
             .background(Color.LightGray)
-            .padding(16.dp)
+            .padding(16.dp),
+        contentAlignment = Alignment.Center
 
     ) {
-        IconButton(onClick = {expanded = true},
-            modifier = Modifier.padding(top = 16.dp)) {
-            Icon(Icons.Filled.Menu, contentDescription = "Menu",
-            modifier = Modifier
-                .size(36.dp)
+        Row (
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            IconButton(onClick = {expanded = true},
+                modifier = Modifier.padding(top = 16.dp)) {
+                Icon(Icons.Filled.Menu, contentDescription = "Menu",
+                    modifier = Modifier
+                        .size(36.dp)
+                )
+            }
+
+            Text(
+                text = "Fancy Äppi",
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(top = 28.dp)
+                    .align(Alignment.CenterVertically),
+                textAlign = TextAlign.Center,
+                fontFamily = customFont,
+                fontSize = 36.sp
             )
+
+            Box(modifier = Modifier.size(36.dp))
         }
 
         DropdownMenu(
@@ -74,8 +102,12 @@ fun NaviButtons(navController: NavController) {
                 }
             )
 
-
         }
+
+       }
     }
 
-}
+
+
+
+
