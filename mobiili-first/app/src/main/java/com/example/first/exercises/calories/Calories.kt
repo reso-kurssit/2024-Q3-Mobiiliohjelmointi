@@ -1,10 +1,12 @@
 package com.example.first.exercises.calories
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -22,21 +24,34 @@ import androidx.navigation.NavController
 import com.example.first.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.toSize
 import com.example.first.ui.theme.FirstTheme
+import kotlin.math.exp
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.ui.text.font.FontWeight
 
 
 @Composable
 fun CalorieScreen(navController: NavController) {
     var weightInput by remember { mutableStateOf("") }
+    var weight = weightInput.toIntOrNull() ?: 0
     var ifTrueMaleIfFalseFemale by remember { mutableStateOf( true) }
-    var password: String by remember { mutableStateOf("") }
+    var intensity by remember { mutableStateOf(1.3f) }
+    var result by remember { mutableStateOf(0) }
 
     val reusableModifier = Modifier
         .fillMaxWidth()
@@ -49,6 +64,9 @@ fun CalorieScreen(navController: NavController) {
         Heading(title = stringResource(R.string.titleWeek5))
         WeightField(weightInput = weightInput, onValueChange = { weightInput = it })
         GenderChoice(ifTrueMaleIfFalseFemale, setGender = { ifTrueMaleIfFalseFemale = it})
+        IntensityList(onClick = {intensity = it})
+        Text (text = result.toString(), color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.Bold)
+        Calculation(ifTrueMaleIfFalseFemale = ifTrueMaleIfFalseFemale, weight = weight, intensity = intensity, setResult = {result = it})
     }
 }
 
@@ -106,5 +124,80 @@ fun GenderChoice (ifTrueMaleIfFalseFemale: Boolean, setGender:(Boolean) -> Unit)
             Text (text = "Female")
         }
 
+    }
+}
+
+@Composable
+fun IntensityList (onClick:(Float) -> Unit) {
+    var expanded by remember { mutableStateOf(false) }
+    var selectedText by remember { mutableStateOf("Light") }
+    var textFieldSize by remember { mutableStateOf(Size.Zero) }
+    val items = listOf("Light", "Usual", "Moderate", "Hard", "Very Hard")
+
+    val icon = if (expanded)
+        Icons.Filled.KeyboardArrowUp
+    else
+        Icons.Filled.KeyboardArrowDown
+
+    Column {
+        OutlinedTextField(
+            readOnly = true,
+            value = selectedText,
+            onValueChange = { selectedText = it},
+            modifier = Modifier
+                .fillMaxWidth()
+                .onGloballyPositioned { coordinates -> textFieldSize = coordinates.size.toSize() },
+            label = { Text(text = "Selected intensity")},
+            trailingIcon = {
+                Icon(icon, "contentDescription",
+                    Modifier.clickable { expanded = !expanded })
+            }
+        )
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier
+                .width(with(LocalDensity.current){textFieldSize.width.toDp()})
+            ) {
+            items.forEach { label ->
+
+                Text(
+                    text = label,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            selectedText = label
+
+                            val intensity: Float = when (label) {
+                                "Light" -> 1.3f
+                                "Usual" -> 1.5f
+                                "Moderate" -> 1.7f
+                                "Hard" -> 2f
+                                "Very hard" -> 2.2f
+                                else -> 0.0f
+                            }
+                            onClick(intensity)
+                            expanded = false
+                        }
+                        .padding(8.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun Calculation (ifTrueMaleIfFalseFemale: Boolean, weight: Int, intensity: Float, setResult: (Int) -> Unit) {
+    Button (
+        onClick = {
+            if (ifTrueMaleIfFalseFemale) {
+                setResult(((879 + 10.2 * weight) * intensity).toInt())
+            } else {
+                setResult(((795 + 7.18 * weight) * intensity).toInt())
+            }
+        },
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text (text = "Calculate")
     }
 }
