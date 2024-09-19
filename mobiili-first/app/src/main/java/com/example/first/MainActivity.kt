@@ -38,9 +38,10 @@ class MainActivity : ComponentActivity() {
         ) { innerPadding ->
             NavHost(
                 navController = navController,
-                startDestination = "bmi",
+                startDestination = "home",
                 Modifier.padding(innerPadding)
             ) {
+                composable("home") { Home(navController) }
                 composable("bmi") { Bmi(navController) }
                 composable("loginform") { LoginForm(navController) }
                 composable("calories") { CalorieScreen(navController) }

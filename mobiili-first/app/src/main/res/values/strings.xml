@@ -4,6 +4,7 @@
     <string name="body_mass_index">Body mass index</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
+    <string name="titleHome">Sovellusinfo</string>
     <string name="titleWeek3">Login Form</string>
     <string name="titleWeek5">Calories</string>
     <string name="username">Login</string>
