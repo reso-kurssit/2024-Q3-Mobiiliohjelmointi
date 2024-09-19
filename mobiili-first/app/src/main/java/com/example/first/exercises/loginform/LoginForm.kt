@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -29,12 +30,19 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
+import com.example.first.ui.theme.PureWhite
+import com.example.first.ui.theme.SolidBlue
 
 
 @Composable
 fun LoginForm(navController: NavController) {
     var username: String by remember { mutableStateOf("")}
     var password: String by remember { mutableStateOf("")}
+
+    val reusableModifier = Modifier
+        .fillMaxWidth()
+        .padding(vertical = 8.dp)
+
     Column(
         modifier = Modifier.padding(8.dp)
     ) {
@@ -58,9 +66,7 @@ fun LoginForm(navController: NavController) {
                 )
             },
             singleLine = true,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp),
+            modifier = reusableModifier
 
         )
         OutlinedTextField(
@@ -75,9 +81,7 @@ fun LoginForm(navController: NavController) {
             },
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp),
+            modifier = reusableModifier
 
             )
 
@@ -85,11 +89,20 @@ fun LoginForm(navController: NavController) {
             onClick = {
                 navController.navigate("loginform")
             },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 10.dp)
+            colors = ButtonDefaults.buttonColors(
+                containerColor = SolidBlue,
+                contentColor = PureWhite,
+            ),
+            shape = RoundedCornerShape(12.dp),
+
+            modifier = reusableModifier
+                .padding(horizontal = 6.dp)
+                //.background(SolidBlue)
         ) {
-            Text(text = stringResource(R.string.loginButton))
+            Text(
+                text = stringResource(R.string.loginButton),
+                style = MaterialTheme.typography.labelLarge,
+                )
         }
 
     }
