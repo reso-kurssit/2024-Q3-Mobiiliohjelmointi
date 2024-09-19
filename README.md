@@ -1,9 +1,10 @@
 
 ## 2024-Q3-Mobiiliohjelmointi
 
-### Tämä repositorio sisältää tekemiäni viikkotehtäviä mobiiliohjelmoinnin kurssilla Mobiiliohjelmointi natiiviteknologioilla IN00CT07-3007
+Tämä repositorio sisältää tekemiäni viikkotehtäviä mobiiliohjelmoinnin kurssilla Mobiiliohjelmointi natiiviteknologioilla IN00CT07-3007
 
-#### Viikkotehtävien sijainnit
+
+## Viikkotehtävien sijainnit
 
 **repon ulkopuolella**
 - Viikko 1: Kuvankaappaus Moodlessa
