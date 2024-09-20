@@ -4,10 +4,17 @@
     <string name="titleHome">Welcome to Pocket Gate!</string>
     <string name="titleNews">News from Baldur\'s Gate</string>
 
-    <string name="textboxHome">Pocket Gate is a simple app for fans of Baldur\'s Gate III.
-        Here, you\'ll find the latest news and helpful resources for your gaming experience.
+    <string name="textboxHome">Pocket Gate is a simple app for fans of Baldur\'s Gate III.\n
+        \nHere, you\'ll find the latest news and a charming D20 dice roller featuring multiple randomized colors along with a bonus and penalty system.\n
+        \nExperience the thrill of rolling for critical success or facing the consequences of a critical failure!
     </string>
     <string name="textboxRoll">Roll !</string>
+    <string name="textboxBonus">Add Bonus</string>
+    <string name="textboxPenalty">Add Penalty</string>
+
+    <string name="criticalSuccess">Critical Success!</string>
+    <string name="criticalFailure">Critical Failure!</string>
+
     <string name="textboxBottomBar">Roll !</string>
 
     <string-array name="dice_types">
