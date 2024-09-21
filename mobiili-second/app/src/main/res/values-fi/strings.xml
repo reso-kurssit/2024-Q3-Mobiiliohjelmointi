@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Pocket Gate</string>
+    <string name="titleApp">Pocket Gate</string>
+    <string name="titleHome">Tervetuloa Pocket Gateen!</string>
+    <string name="titleNews">Uutisia pelistä Baldur\'s Gate</string>
+
+    <string name="textboxHome">
+        Pocket Gate on yksinkertainen sovellus Baldur\'s Gate III -faneille.\n
+\nTäältä löydät viimeisimmät uutiset ja söpön D20-nopparollerin, jossa on useita satunnaisesti valittuja värejä sekä bonus- ja rangaistussysteemi.\n
+\nKoe sen kautta kriittisen onnistumisen jännitys tai kohtaa kriittisen epäonnistumisen seuraukset!
+    </string>
+    <string name="textboxRoll">Heitä !</string>
+    <string name="textboxBonus">Lisää Bonus</string>
+    <string name="textboxPenalty">Lisää Rangaistus</string>
+    <string name="textboxLoading">Lataa ...</string>
+    <string name="textboxError">Virhe: $error</string>
+
+    <string name="textboxBottomBar">Rollaa, jei !</string>
+
+    <string name="criticalSuccess">Kriittinen Onnistuminen!</string>
+    <string name="criticalFailure">Kriittinen Epäonnistuminen!</string>
+
+    <string-array name="dice_types">
+        <item>D20</item>
+    </string-array>
+</resources>

@@ -1,5 +1,6 @@
 package com.example.second.screens.navi
 
+import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.example.second.ui.theme.SolidBlue
@@ -26,6 +28,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.example.second.R
 import com.example.second.ui.theme.QuiteDark
+import java.util.Locale
 
 val topBarBackground = QuiteDark
 val customFont = FontFamily(
@@ -35,6 +38,8 @@ val customFont = FontFamily(
 @Composable
 fun Navi(navController: NavController) {
     var expanded by remember { mutableStateOf(false) }
+    val context = LocalContext.current
+    val activity = context as? Activity
 
     Box(
         modifier = Modifier
@@ -103,12 +108,44 @@ fun Navi(navController: NavController) {
                 }
             )
 
-        }
+            DropdownMenuItem(
+                { Text(text = "FI") },
+                onClick = {
+                    val locale = Locale("fi")
+                    Locale.setDefault(locale)
 
+                    val config = context.resources.configuration
+                    config.setLocale(locale)
+
+                    context.createConfigurationContext(config)
+
+                    // Tämä deprecated tarvitaan
+                    context.resources.updateConfiguration(config, context.resources.displayMetrics)
+
+                    activity?.recreate()
+                    expanded = false
+                }
+            )
+
+            DropdownMenuItem(
+                { Text(text = "EN") },
+                onClick = {
+                    val locale = Locale.ENGLISH
+                    Locale.setDefault(locale)
+
+                    val config = context.resources.configuration
+                    config.setLocale(locale)
+
+                    context.createConfigurationContext(config)
+
+                    // Tämä deprecated tarvitaan
+                    context.resources.updateConfiguration(config, context.resources.displayMetrics)
+
+                    activity?.recreate()
+                    expanded = false
+                }
+            )
+
+        }
     }
 }
-
-
-
-
-
