@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -35,6 +36,7 @@ fun DiceRollerScreen(navController: NavController) {
     var specialMessageFailure by remember { mutableStateOf("") }
 
     val focusManager = LocalFocusManager.current
+    val context = LocalContext.current
 
     Column(
 
@@ -153,12 +155,13 @@ fun DiceRollerScreen(navController: NavController) {
                     else -> R.drawable.d201
                 }
 
+
                 if (diceResult == 20) {
-                    specialMessageSuccess = "Critical Success!"
+                    specialMessageSuccess = context.getString(R.string.criticalSuccess)
                     specialMessageFailure = ""
                     finalResult = diceResult
                 } else if (diceResult == 1) {
-                    specialMessageFailure = "Critical Failure!"
+                    specialMessageFailure = context.getString(R.string.criticalFailure)
                     specialMessageSuccess = ""
                     finalResult = diceResult
                 } else {

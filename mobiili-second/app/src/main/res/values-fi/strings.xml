@@ -17,8 +17,8 @@
 
     <string name="textboxBottomBar">Rollaa, jei !</string>
 
-    <string name="criticalSuccess">Kriittinen Onnistuminen!</string>
-    <string name="criticalFailure">Kriittinen Epäonnistuminen!</string>
+    <string name="criticalSuccess">Kriittinen onnistuminen!</string>
+    <string name="criticalFailure">Kriittinen epäonnistuminen!</string>
 
     <string-array name="dice_types">
         <item>D20</item>
