@@ -8,6 +8,9 @@
         \nHere, you\'ll find the latest news and a charming D20 dice roller featuring multiple randomized colors along with a bonus and penalty system.\n
         \nExperience the thrill of rolling for critical success or facing the consequences of a critical failure!
     </string>
+    <string name="textboxAboutLanguage">
+    You can change the app\'s language through the hamburger menu (FI / EN). However, the news will only be available in English.
+    </string>
     <string name="textboxRoll">Roll !</string>
     <string name="textboxBonus">Add Bonus</string>
     <string name="textboxPenalty">Add Penalty</string>

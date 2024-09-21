@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -59,8 +60,19 @@ fun Home(navController: NavController) {
             .padding(all = 4.dp)
         ) {
             Text(text = stringResource(R.string.textboxHome), color = QuiteDark)
-            Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
         }
+
+        Spacer(modifier = Modifier.padding(4.dp))
+
+        Row(modifier = textModifier
+            .background(semiTransparentColor, RoundedCornerShape(8.dp))
+            .padding(all = 9.dp)
+            .fillMaxWidth()
+            .padding(all = 4.dp)
+        ) {
+            Text(text = stringResource(R.string.textboxAboutLanguage), color = QuiteDark)
+        }
+
     }
 }
 

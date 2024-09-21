@@ -9,6 +9,9 @@
 \nTäältä löydät viimeisimmät uutiset ja söpön D20-nopparollerin, jossa on useita satunnaisesti valittuja värejä sekä bonus- ja rangaistussysteemi.\n
 \nKoe sen kautta kriittisen onnistumisen jännitys tai kohtaa kriittisen epäonnistumisen seuraukset!
     </string>
+    <string name="textboxAboutLanguage">
+    Voit muuttaa sovelluksen kieltä hampparivalikon kautta (FI / EN). Uutiset tulevat kuitenkin vain englanniksi.
+    </string>
     <string name="textboxRoll">Heitä !</string>
     <string name="textboxBonus">Lisää Bonus</string>
     <string name="textboxPenalty">Lisää Rangaistus</string>
