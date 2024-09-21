@@ -22,3 +22,6 @@ Tämä repositorio sisältää tekemiäni viikkotehtäviä mobiiliohjelmoinnin k
 
 **mobiili-second**
 - 4-5:een tähtäävä kurssityö: Pocket Gate -sovellus
+
+
+![SneakPeek: App with dark and light themes](image.png)
