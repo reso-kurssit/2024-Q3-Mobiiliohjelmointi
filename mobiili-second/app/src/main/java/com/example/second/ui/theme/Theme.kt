@@ -17,12 +17,14 @@ private val DarkColorScheme = darkColorScheme(
     onPrimaryContainer = PureWhite,
     secondary = LightRed,
     onSecondary = BrightRed,
+    secondaryContainer = QuiteDark,
+    onSecondaryContainer = PureWhite,
     tertiary = LightGreen,
     onTertiary = DarkGreen,
     tertiaryContainer = PureWhite,
-    background = SolidBlue,
+    background = StrongGrey,
     onBackground = PureWhite,
-    surface = LightestBrown,
+    surface = PrettyDark,
     onSurface = QuiteDark
 )
 
@@ -33,12 +35,14 @@ private val LightColorScheme = lightColorScheme(
     onPrimaryContainer = PureWhite,
     secondary = BrightRed,
     onSecondary = LightRed,
+    secondaryContainer = StrongGrey,
+    onSecondaryContainer = QuiteDark,
     tertiary = DarkGreen,
     onTertiary = LightGreen,
     tertiaryContainer = QuiteDark,
-    background = SolidBlue,
+    background = StrongGrey,
     onBackground = PureWhite,
-    surface = LightestBrown,
+    surface = LightGrey,
     onSurface = PureWhite
 )
 

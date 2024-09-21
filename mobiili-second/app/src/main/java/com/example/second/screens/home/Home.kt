@@ -26,6 +26,8 @@ import com.example.second.R
 import com.example.second.components.SwitchBackground
 import com.example.second.ui.theme.FirstTheme
 import com.example.second.ui.theme.LightestBrown
+import com.example.second.ui.theme.QuiteDark
+import com.example.second.ui.theme.SolidBlue
 
 @Composable
 fun Home(navController: NavController) {
@@ -53,8 +55,10 @@ fun Home(navController: NavController) {
         Row(modifier = textModifier
             .background(semiTransparentColor, RoundedCornerShape(8.dp))
             .padding(all = 9.dp)
-            .fillMaxWidth()) {
-            Text(text = stringResource(R.string.textboxHome))
+            .fillMaxWidth()
+            .padding(all = 4.dp)
+        ) {
+            Text(text = stringResource(R.string.textboxHome), color = QuiteDark)
             Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
         }
     }
@@ -73,7 +77,7 @@ fun Heading(title: String) {
         text = title,
         fontSize = 24.sp,
         textAlign = TextAlign.Center,
-        color = MaterialTheme.colorScheme.primary,
+        color = SolidBlue,
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 16.dp, bottom = 16.dp)

@@ -1,6 +1,7 @@
 package com.example.second.screens.diceroller
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
@@ -8,7 +9,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -23,9 +23,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlin.random.Random
 import com.example.second.R
-import com.example.second.ui.theme.LightestBrown
-import com.example.second.ui.theme.PureWhite
-import com.example.second.ui.theme.SolidBlue
 
 @Composable
 fun DiceRollerScreen(navController: NavController) {
@@ -40,9 +37,11 @@ fun DiceRollerScreen(navController: NavController) {
     val focusManager = LocalFocusManager.current
 
     Column(
+
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .background(MaterialTheme.colorScheme.surface),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
@@ -175,7 +174,5 @@ fun DiceRollerScreen(navController: NavController) {
         )) {
             Text(text = stringResource(R.string.textboxRoll))
         }
-
-
     }
 }

@@ -15,7 +15,7 @@
     <string name="criticalSuccess">Critical Success!</string>
     <string name="criticalFailure">Critical Failure!</string>
 
-    <string name="textboxBottomBar">Roll !</string>
+    <string name="textboxBottomBar">Roll it yey !</string>
 
     <string-array name="dice_types">
         <item>D20</item>

@@ -11,7 +11,6 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.material3.*
@@ -26,7 +25,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.example.second.R
-import com.example.second.ui.theme.PureWhite
 import com.example.second.ui.theme.QuiteDark
 
 val topBarBackground = QuiteDark
@@ -42,7 +40,7 @@ fun Navi(navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(0.dp)
-            .background(topBarBackground)
+            .background(MaterialTheme.colorScheme.secondaryContainer)
             .padding(16.dp),
         contentAlignment = Alignment.Center
 
@@ -59,7 +57,7 @@ fun Navi(navController: NavController) {
                     contentDescription = "Menu",
                     modifier = Modifier
                         .size(36.dp),
-                    tint = Color.White
+                    tint = MaterialTheme.colorScheme.onSecondaryContainer
                 )
             }
 
@@ -72,7 +70,7 @@ fun Navi(navController: NavController) {
                 textAlign = TextAlign.Center,
                 fontFamily = customFont,
                 fontSize = 36.sp,
-                color = PureWhite
+                color = MaterialTheme.colorScheme.onSecondaryContainer
             )
 
             Box(modifier = Modifier.size(36.dp))
@@ -80,7 +78,9 @@ fun Navi(navController: NavController) {
 
         DropdownMenu(
             expanded = expanded,
-            onDismissRequest = { expanded = false }) {
+            onDismissRequest = { expanded = false },
+            modifier = Modifier.background(MaterialTheme.colorScheme.background)
+        ) {
 
             DropdownMenuItem(
                 { Text(text = "Main", color = SolidBlue) },

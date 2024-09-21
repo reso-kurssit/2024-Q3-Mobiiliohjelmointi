@@ -12,6 +12,7 @@ val SolidBlue= Color(0xFF102b76)
 val PureWhite = Color(0xFFFFFFFF)
 val LightestBrown = Color(0xFFbfbfbf)
 val QuiteDark = Color(0xFF101010)
+val PrettyDark = Color (0xFF303030)
 val LightGreen = Color(0xFF40dd1b)
 val DarkGreen = Color(0xFF197503)
 val SkyBlue = Color(0xFF3c9cf8)
@@ -24,4 +25,5 @@ val StrongGrey = Color(0xFFc8c8c8)
 val DarkGrey = Color(0xFF3e3e3e)
 val LightRed = Color(0xFFf6b6b6)
 val BrightRed = Color(0xFF8c2022)
+
 
