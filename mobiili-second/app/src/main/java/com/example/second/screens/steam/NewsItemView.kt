@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import com.example.second.R
 import com.example.second.data.model.NewsItem
 
 @Composable
@@ -15,12 +17,13 @@ fun NewsItemView(item: NewsItem) {
     val context = LocalContext.current
     val cleanText = item.contents.replace(Regex("<[^>]+>"), "")
 
-    Column(modifier = Modifier.padding(16.dp).clickable {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.url))
-        context.startActivity(intent)
-    }) {
+    Column(modifier = Modifier
+        .padding(16.dp)
+        .clickable {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.url))
+            context.startActivity(intent)
+        }) {
         Text(text = item.title)
         Text(text = cleanText)
-        Text(text = "[ Read more ... ]")
     }
 }

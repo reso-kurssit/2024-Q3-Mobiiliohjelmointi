@@ -11,11 +11,13 @@
     <string name="textboxRoll">Roll !</string>
     <string name="textboxBonus">Add Bonus</string>
     <string name="textboxPenalty">Add Penalty</string>
+    <string name="textboxLoading">Loading ...</string>
+    <string name="textboxError">Error: $error</string>
+
+    <string name="textboxBottomBar">Roll it yey !</string>
 
     <string name="criticalSuccess">Critical Success!</string>
     <string name="criticalFailure">Critical Failure!</string>
-
-    <string name="textboxBottomBar">Roll it yey !</string>
 
     <string-array name="dice_types">
         <item>D20</item>

@@ -21,7 +21,7 @@ class SteamViewModel : ViewModel() {
     private fun fetchNews() {
         viewModelScope.launch {
             try {
-                news.value = repository.fetchNews(1086940, 4, 200)
+                news.value = repository.fetchNews(1086940, 5, 280)
             } catch (e: Exception) {
                 Log.e("SteamViewModel", "Error fetching news", e)
                 error.value = "Failed to fetch news: ${e.message}"

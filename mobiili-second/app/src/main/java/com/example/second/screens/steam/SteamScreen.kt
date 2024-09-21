@@ -16,6 +16,8 @@ import com.example.second.data.model.NewsItem
 import com.example.second.viewmodel.SteamViewModel
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.res.stringResource
+import com.example.second.R
 import com.example.second.ui.theme.LightestBrown
 
 @Composable
@@ -35,15 +37,15 @@ fun SteamScreen(navController: NavController) {
             .verticalScroll(scrollState)
     ) {
         if (loading) {
-            Text(text = "Loading...", modifier = Modifier.padding(16.dp))
+            Text(text = stringResource(R.string.textboxLoading), modifier = Modifier.padding(16.dp))
         } else if (error != null) {
-            Text(text = "Error: $error", modifier = Modifier.padding(16.dp))
+            Text(text = stringResource(R.string.textboxError), modifier = Modifier.padding(16.dp))
         } else {
             for (newsItem in news) {
                 val cleanContents = newsItem.contents.replace(Regex("<[^>]+>"), "")
                 NewsResponse(newsItem.copy(contents = cleanContents))
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(12.dp))
             }
         }
     }
