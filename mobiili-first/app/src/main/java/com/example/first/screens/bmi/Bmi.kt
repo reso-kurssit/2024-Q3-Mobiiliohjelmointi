@@ -1,4 +1,4 @@
-package com.example.first.exercises.bmi
+package com.example.first.screens.bmi
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

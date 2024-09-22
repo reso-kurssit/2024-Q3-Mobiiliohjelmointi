@@ -1,13 +1,47 @@
 <resources>
+    <string name="titleApp">Fancy Äppi</string>
     <string name="app_name">BMI</string>
     <string name="result">Body mass index is %s</string>
     <string name="body_mass_index">Body mass index</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
+    <string name="calculate">Calculate</string>
+    <string name="selected">Seleceted Intensity</string>
     <string name="titleHome">Sovellusinfo</string>
     <string name="titleWeek3">Login Form</string>
+    <string name="titleWeek4">Theming</string>
     <string name="titleWeek5">Calories</string>
+
+    <string name="boxPressTheButton">Paina nappia!</string>
+    <string name="boxButtonCounts">Painalluskertoja: </string>
+
     <string name="username">Login</string>
     <string name="password">Password</string>
     <string name="loginButton">Login</string>
+
+    <string name="main">Alku</string>
+    <string name="week1">Viikko 1</string>
+    <string name="week2">Viikko 2</string>
+    <string name="week3">Viikko 3</string>
+    <string name="week4">Viikko 4</string>
+    <string name="week5">Viikko 5</string>
+    <string name="week6">Viikko 6</string>
+    <string name="week7">Viikko 7</string>
+    <string name="week8">Viikko 8</string>
+
+    <string name="assignmentLocations">Viikkotehtävien sijainnit</string>
+    <string name="anotherAssignmet">- Kurssityö: eri sovellus</string>
+    <string name="week1_">- Viikko 1: Kuvankaappaus Moodlessa</string>
+    <string name="week2_">- Viikko 2: BMI -muunnin</string>
+    <string name="week3_">- Viikko 3: Kirjautumislomake</string>
+    <string name="week4_">- Viikko 4: Teemat, integroitu sovellukseen + nappi</string>
+    <string name="week5_">- Viikko 5: Kalorit -laskuri</string>
+    <string name="week6_">- Viikko 6: Scaffold -navigaatio, integroitu sovellukseen</string>
+    <string name="week7_">- Viikko 7: Tulossa</string>
+    <string name="week8_">- Viikko 8: Tulossa</string>
+
+
+
 </resources>
+
+

@@ -1,4 +1,4 @@
-package com.example.first
+package com.example.first.screens.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,8 +19,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.example.first.R
 import com.example.first.ui.theme.FirstTheme
-
 
 @Composable
 fun Home(navController: NavController) {
@@ -34,34 +34,42 @@ fun Home(navController: NavController) {
     ) {
         Heading(title = stringResource(R.string.titleHome))
 
-        Text (text = "Viikkotehtävien sijainnit", style = MaterialTheme.typography.titleLarge)
-
-        Text (text = "- Viikko 1: Kuvankaappauksena Moodlessa", modifier = textModifier)
+        Text (text = stringResource(R.string.assignmentLocations),
+            style = MaterialTheme.typography.titleLarge)
 
         Row(modifier = textModifier) {
-            Text(text = "- Viikko 2: BMI -muunnin, ")
-            Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
+            Text(text = stringResource(R.string.week1_))
         }
 
         Row(modifier = textModifier) {
-            Text(text = "- Viikko 3: Kirjautumislomake, ")
-            Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
+            Text(text = stringResource(R.string.week2_))
         }
-
-        Text (text = "- Viikko 4: Teemat, integroitu sovellukseen", modifier = textModifier)
 
         Row(modifier = textModifier) {
-            Text(text = "- Viikko 5: Kalorit -laskuri, ")
-            Icon(Icons.Filled.Menu, contentDescription = "Menu Icon", modifier = Modifier.size(20.dp))
-            Text(text = "-valikossa", modifier = Modifier.padding(start = 4.dp))
+            Text(text = stringResource(R.string.week3_))
         }
 
-        Text (text = "- Viikko 6: Scaffold -navigaatio, integroitu sovellukseen", modifier = textModifier)
-        Text (text = "- Viikko 7: Tulossa", modifier = textModifier)
-        Text (text = "- Viikko 8: Tulossa", modifier = textModifier)
-        Text (text = "- Sovellusharjoitus: eri sovellus", modifier = textModifier)
+        Row(modifier = textModifier) {
+            Text(text = stringResource(R.string.week4_))
+        }
+
+        Row(modifier = textModifier) {
+            Text(text = stringResource(R.string.week5_))
+        }
+
+        Row(modifier = textModifier) {
+            Text(text = stringResource(R.string.week6_))
+        }
+
+        Row(modifier = textModifier) {
+            Text(text = stringResource(R.string.week7_))
+        }
+
+        Row(modifier = textModifier) {
+            Text(text = stringResource(R.string.week8_))
+        }
+
+        Text (text = stringResource(R.string.anotherAssignmet), modifier = textModifier)
     }
 }
 

@@ -1,4 +1,4 @@
-package com.example.first.exercises.calories
+package com.example.first.screens.calories
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,7 +23,6 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 import com.example.first.R
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
@@ -40,8 +39,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.toSize
 import com.example.first.ui.theme.FirstTheme
-import kotlin.math.exp
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.ui.text.font.FontWeight
 
 
@@ -147,7 +144,7 @@ fun IntensityList (onClick:(Float) -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .onGloballyPositioned { coordinates -> textFieldSize = coordinates.size.toSize() },
-            label = { Text(text = "Selected intensity")},
+            label = { Text(text = stringResource(R.string.selected))},
             trailingIcon = {
                 Icon(icon, "contentDescription",
                     Modifier.clickable { expanded = !expanded })
@@ -198,6 +195,6 @@ fun Calculation (ifTrueMaleIfFalseFemale: Boolean, weight: Int, intensity: Float
         },
         modifier = Modifier.fillMaxWidth()
     ) {
-        Text (text = "Calculate")
+        Text (text = stringResource(R.string.calculate))
     }
 }

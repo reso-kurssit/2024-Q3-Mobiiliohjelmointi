@@ -1,11 +1,9 @@
-package com.example.first.exercises.loginform
+package com.example.first.screens.loginform
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -28,8 +26,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ColorScheme
-import androidx.compose.ui.graphics.Color
 import com.example.first.ui.theme.PureWhite
 import com.example.first.ui.theme.SolidBlue
 
@@ -97,7 +93,6 @@ fun LoginForm(navController: NavController) {
 
             modifier = reusableModifier
                 .padding(horizontal = 6.dp)
-                //.background(SolidBlue)
         ) {
             Text(
                 text = stringResource(R.string.loginButton),
