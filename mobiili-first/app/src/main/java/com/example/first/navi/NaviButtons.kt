@@ -125,8 +125,3 @@ fun NaviButtons(navController: NavController) {
 
        }
     }
-
-
-
-
-
