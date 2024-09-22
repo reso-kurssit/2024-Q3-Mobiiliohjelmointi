@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 
 @Composable
 fun ColorSwitchingButtons(navController: NavController) {
-    var buttonColorIndex by remember { mutableStateOf(0) } // Track the current color index
+    var buttonColorIndex by remember { mutableStateOf(0) }
     val buttonColors = listOf(
         MaterialTheme.colorScheme.secondary,
         MaterialTheme.colorScheme.tertiary,
@@ -71,7 +71,7 @@ fun PressTheButton(buttonColor: androidx.compose.ui.graphics.Color, onButtonClic
         },
         modifier = Modifier
             .fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(containerColor = buttonColor) // Apply the button color
+        colors = ButtonDefaults.buttonColors(containerColor = buttonColor)
     ) {
         Text(text = stringResource(R.string.boxPressTheButton))
     }

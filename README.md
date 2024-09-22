@@ -10,15 +10,14 @@ Tämä repositorio sisältää tekemiäni viikkotehtäviä mobiiliohjelmoinnin k
 
 **mobiili-first**
 - Viikko 2: BMI -muunnin
-  - hampparivalikossa / projektin screens -kansiossa omana komponenttinaan
 - Viikko 3: Kirjautumislomake ilman toiminnallisuutta
-  - hampparivalikossa / projektin screens -kansiossa omana komponenttinaan
-- Viikko 4: Teemat, integroitu sovellukseen
+- Viikko 4: Teemat (ja nappi)
 - Viikko 5: Kalorit -laskuri
-  - hampparivalikossa / projektin screens -kansiossa omana komponenttinaan
 - Viikko 6: Scaffold -navigaatio, integroitu sovellukseen
 - Viikko 7: Tulossa
 - Viikko 8: Tulossa
+  - *Sovellusosat löytyvät hampparivalikosta sekä projektin screens -kansiosta omina komponentteinaan*
+  - *Teemat ja navigaatio integroitu sovellukseen*
 
 **mobiili-second**
 - 4-5:een tähtäävä kurssityö: Pocket Gate -sovellus

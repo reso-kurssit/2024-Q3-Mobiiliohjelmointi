@@ -60,7 +60,6 @@ class MainActivity : ComponentActivity() {
                 composable("calories") { CalorieScreen(navController) }
             }
         }
-
     }
 
     @Preview(showBackground = true)
