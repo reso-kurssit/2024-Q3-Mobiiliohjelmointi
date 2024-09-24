@@ -129,7 +129,7 @@ fun IntensityList (onClick:(Float) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf("Light") }
     var textFieldSize by remember { mutableStateOf(Size.Zero) }
-    val items = listOf("Light", "Usual", "Moderate", "Hard", "Very Hard")
+    val items = listOf("Light", "Usual", "Moderate", "Hard", "Very hard")
 
     val icon = if (expanded)
         Icons.Filled.KeyboardArrowUp

@@ -121,6 +121,13 @@ fun NaviButtons(navController: NavController) {
                 }
             )
 
+            DropdownMenuItem(
+                { Text(text = stringResource(R.string.week6), color = SolidBlue) },
+                onClick = { navController.navigate("scaff")
+                    expanded = false
+                }
+            )
+
         }
 
        }

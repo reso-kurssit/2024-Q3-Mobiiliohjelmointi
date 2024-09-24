@@ -15,7 +15,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="Fancy Äppi"
             android:theme="@style/Theme.first">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
