@@ -1,9 +1,12 @@
 package com.example.second.screens.diceroller
 
+import DiceRollerViewModel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -15,39 +18,31 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import kotlin.random.Random
 import com.example.second.R
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun DiceRollerScreen(navController: NavController) {
-    var diceResult by remember { mutableStateOf(0) }
-    var finalResult by remember { mutableStateOf(0) }
-    var imageResource by remember { mutableStateOf(R.drawable.d201) }
-    var bonus by remember { mutableStateOf(0) }
-    var penalty by remember { mutableStateOf(0) }
-    var specialMessageSuccess by remember { mutableStateOf("") }
-    var specialMessageFailure by remember { mutableStateOf("") }
+fun DiceRollerScreen(navController: NavController, viewModel: DiceRollerViewModel = viewModel()) {
+    val diceRollState by viewModel.diceRollState.collectAsState()
 
     val focusManager = LocalFocusManager.current
-    val context = LocalContext.current
+    val scrollState = rememberScrollState()
 
     Column(
-
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(MaterialTheme.colorScheme.surface),
+            .background(MaterialTheme.colorScheme.surface)
+            .verticalScroll(scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -55,25 +50,24 @@ fun DiceRollerScreen(navController: NavController) {
                 .clip(CircleShape)
         ) {
             Image(
-                painter = painterResource(id = imageResource),
+                painter = painterResource(id = diceRollState.imageResource),
                 contentDescription = "D20 dice",
                 modifier = Modifier.fillMaxSize()
             )
-
             Text(
-                text = "$finalResult",
+                text = "${diceRollState.finalResult}",
                 fontSize = 32.sp,
                 color = Color.White
             )
         }
 
-        if (specialMessageSuccess.isNotEmpty()) {
-            Text(text = specialMessageSuccess, color = Color.Green, fontSize = 24.sp)
+        if (diceRollState.specialMessageSuccess.isNotEmpty()) {
+            Text(text = diceRollState.specialMessageSuccess, color = Color.Green, fontSize = 24.sp)
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        if (specialMessageFailure.isNotEmpty()) {
-            Text(text = specialMessageFailure, color = Color.Red, fontSize = 24.sp)
+        if (diceRollState.specialMessageFailure.isNotEmpty()) {
+            Text(text = diceRollState.specialMessageFailure, color = Color.Red, fontSize = 24.sp)
             Spacer(modifier = Modifier.height(16.dp))
         }
 
@@ -82,15 +76,11 @@ fun DiceRollerScreen(navController: NavController) {
         Row(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
-
             TextField(
-                value = bonus.toString(),
-                onValueChange = {
-                    bonus = it.toIntOrNull() ?: 0
-                },
+                value = diceRollState.bonus.toString(),
+                onValueChange = { viewModel.updateBonus(it.toIntOrNull() ?: 0) },
                 label = { Text(text = stringResource(R.string.textboxBonus)) },
                 colors = TextFieldDefaults.colors (
                     focusedIndicatorColor = MaterialTheme.colorScheme.tertiaryContainer,
@@ -104,17 +94,14 @@ fun DiceRollerScreen(navController: NavController) {
                     disabledContainerColor = MaterialTheme.colorScheme.tertiary,
                     unfocusedContainerColor = MaterialTheme.colorScheme.tertiary,
                 ),
-                modifier = Modifier
-                    .width(150.dp)
+                modifier = Modifier.width(150.dp)
             )
 
             Spacer(modifier = Modifier.width(16.dp))
 
             TextField(
-                value = penalty.toString(),
-                onValueChange = {
-                    penalty = it.toIntOrNull() ?: 0
-                },
+                value = diceRollState.penalty.toString(),
+                onValueChange = { viewModel.updatePenalty(it.toIntOrNull() ?: 0) },
                 label = { Text(text = stringResource(R.string.textboxPenalty)) },
                 colors = TextFieldDefaults.colors (
                     focusedIndicatorColor = MaterialTheme.colorScheme.tertiaryContainer,
@@ -136,45 +123,14 @@ fun DiceRollerScreen(navController: NavController) {
 
         Button(
             onClick = {
-
                 focusManager.clearFocus()
-
-                diceResult = Random.nextInt(1, 21)
-
-                val randomImage = Random.nextInt(201, 210)
-                imageResource = when (randomImage) {
-                    201 -> R.drawable.d201
-                    202 -> R.drawable.d202
-                    203 -> R.drawable.d203
-                    204 -> R.drawable.d204
-                    205 -> R.drawable.d205
-                    206 -> R.drawable.d206
-                    207 -> R.drawable.d207
-                    208 -> R.drawable.d208
-                    209 -> R.drawable.d209
-                    else -> R.drawable.d201
-                }
-
-
-                if (diceResult == 20) {
-                    specialMessageSuccess = context.getString(R.string.criticalSuccess)
-                    specialMessageFailure = ""
-                    finalResult = diceResult
-                } else if (diceResult == 1) {
-                    specialMessageFailure = context.getString(R.string.criticalFailure)
-                    specialMessageSuccess = ""
-                    finalResult = diceResult
-                } else {
-                    finalResult = diceResult + bonus - penalty
-                    specialMessageSuccess = ""
-                    specialMessageFailure = ""
-                }
+                viewModel.rollDice(diceRollState.bonus, diceRollState.penalty)
             },
-
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-        )) {
+            )
+        ) {
             Text(text = stringResource(R.string.textboxRoll))
         }
     }

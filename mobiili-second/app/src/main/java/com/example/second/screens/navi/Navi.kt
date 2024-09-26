@@ -28,15 +28,15 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.example.second.R
 import com.example.second.ui.theme.QuiteDark
+import com.example.second.viewmodel.MainViewModel
 import java.util.Locale
 
-val topBarBackground = QuiteDark
 val customFont = FontFamily(
     Font(R.font.dancingscript)
 )
 
 @Composable
-fun Navi(navController: NavController) {
+fun Navi(navController: NavController,  mainViewModel: MainViewModel) {
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val activity = context as? Activity
@@ -79,6 +79,13 @@ fun Navi(navController: NavController) {
             )
 
             Box(modifier = Modifier.size(36.dp))
+        }
+
+        if (mainViewModel.isLoading.collectAsState().value) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = MaterialTheme.colorScheme.primary
+            )
         }
 
         DropdownMenu(
