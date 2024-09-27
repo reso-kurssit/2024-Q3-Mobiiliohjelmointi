@@ -5,7 +5,8 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.first.model.TodoModel
-import com.example.first.model.TodosApi
+import com.example.first.ui.screens.randomTodos.TodosApi
+
 import kotlinx.coroutines.launch
 
 class TodoViewModel : ViewModel() {
