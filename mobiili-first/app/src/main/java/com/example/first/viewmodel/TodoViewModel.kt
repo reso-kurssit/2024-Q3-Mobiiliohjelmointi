@@ -1,21 +1,33 @@
 package com.example.first.viewmodel
 
+import android.util.Log
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.first.model.TodoModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import com.example.first.model.TodosApi
+import kotlinx.coroutines.launch
 
 class TodoViewModel : ViewModel() {
-    val todos = mutableListOf<String>()
+    var todos = mutableStateListOf<TodoModel>()
+        private set
 
     init {
-        TodoModel(1, "Buy groceries")
-        TodoModel(2, "Walk the dog")
-        TodoModel(3, "Finish homework")
+        //todos.add("Test1")
+        getTodosList()
 
-        todos.add("Test1")
-        todos.add("Test2")
-        todos.add("Test3")
+    }
+
+    private fun getTodosList() {
+        viewModelScope.launch {
+            var todosApi: TodosApi? = null
+            try {
+                todosApi = TodosApi!!.getInstance()
+                todos.clear()
+                todos.addAll(todosApi.getTodos())
+            } catch (e: Exception) {
+                Log.d("TODOVIEWMODEL", e.message.toString())
+            }
+        }
     }
 }

@@ -5,14 +5,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.first.model.TodoModel
 import com.example.first.viewmodel.TodoViewModel
-
 
 @Composable
 fun TodoScreen(navController: NavController, todoViewModel: TodoViewModel = viewModel()) {
@@ -21,16 +21,26 @@ fun TodoScreen(navController: NavController, todoViewModel: TodoViewModel = view
 }
 
 @Composable
-fun TodoList(todos: MutableList<String>) {
+fun TodoList(todos: List<TodoModel>) {
+
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
+    val dividerColor = MaterialTheme.colorScheme.onSecondaryContainer
+
     LazyColumn(modifier = Modifier.padding(8.dp)) {
         items(todos) { todo ->
 
             Text(
-                text = todo,
+                text = todo.title,
                 modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
-                color = Color.Red
+                style = textStyle
             )
-            HorizontalDivider(color = Color.Red, thickness = 1.dp)
+            HorizontalDivider(
+                thickness = 1.dp,
+                color = dividerColor
+            )
 
         }
     }
