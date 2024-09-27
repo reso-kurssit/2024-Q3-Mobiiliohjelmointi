@@ -11,16 +11,19 @@ Tämä repositorio sisältää tekemiäni viikkotehtäviä mobiiliohjelmoinnin k
 **mobiili-first**
 - Viikko 2: BMI -muunnin
 - Viikko 3: Kirjautumislomake ilman toiminnallisuutta
-- Viikko 4: Teemat (ja nappi)
+- Viikko 4: Teemat
 - Viikko 5: Kalorit -laskuri
-- Viikko 6: Scaffold -navigaatio, integroitu sovellukseen
-- Viikko 7: Tulossa
-- Viikko 8: Tulossa
-  - *Sovellusosat löytyvät hampparivalikosta sekä projektin screens -kansiosta omina komponentteinaan*
-  - *Teemat ja navigaatio integroitu sovellukseen*
+- Viikko 6: Scaffold -navigaatio
+- Viikko 7: BMI käyttäen ViewModelia
+- Viikko 8: MVVM ja API:n lukeminen (Json)
 
 **mobiili-second**
 - 4-5:een tähtäävä kurssityö: Pocket Gate -sovellus
 
+## Sovelluksen "first" -rakenne
+
+![alt text](image-1.png)
+
+## Sovelluksen "second" -rakenne ja kuvia
 
 ![SneakPeek: App with dark and light themes](image.png)
