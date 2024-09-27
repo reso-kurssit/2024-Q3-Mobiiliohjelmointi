@@ -1,4 +1,4 @@
-package com.example.second.screens.navi
+package com.example.second.ui.screens.navi
 
 import android.app.Activity
 import androidx.compose.foundation.background

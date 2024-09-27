@@ -1,4 +1,4 @@
-package com.example.second.screens.home
+package com.example.second.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,7 +26,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.example.second.R
-import com.example.second.components.SwitchBackground
+import com.example.second.ui.components.SwitchBackground
 import com.example.second.ui.theme.FirstTheme
 import com.example.second.ui.theme.LightestBrown
 import com.example.second.ui.theme.QuiteDark

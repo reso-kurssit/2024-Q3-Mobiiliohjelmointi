@@ -1,4 +1,4 @@
-package com.example.second.screens.steam
+package com.example.second.ui.screens.steam
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.second.components.SwitchBackground
+import com.example.second.ui.components.SwitchBackground
 import com.example.second.data.model.NewsItem
 import com.example.second.viewmodel.SteamViewModel
 import androidx.compose.foundation.rememberScrollState

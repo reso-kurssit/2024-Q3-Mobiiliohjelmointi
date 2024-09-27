@@ -30,9 +30,9 @@
     <string name="week1_">- Viikko 1: Kuvankaappaus Moodlessa</string>
     <string name="week2_">- Viikko 2: BMI -muunnin</string>
     <string name="week3_">- Viikko 3: Kirjautumislomake</string>
-    <string name="week4_">- Viikko 4: Teemat, integroitu sovellukseen + nappi</string>
+    <string name="week4_">- Viikko 4: Teemat</string>
     <string name="week5_">- Viikko 5: Kalorit -laskuri</string>
-    <string name="week6_">- Viikko 6: Scaffold -navigaatio, integroitu sovellukseen + sivutus</string>
+    <string name="week6_">- Viikko 6: Scaffold -navigaatio</string>
     <string name="week7_">- Viikko 7: BMI käyttäen ViewModelia</string>
     <string name="week8_">- Viikko 8: MVVM ja API:n lukeminen (JSON)</string>
     <string name="week6main">Main</string>

@@ -1,4 +1,4 @@
-package com.example.second
+package com.example.second.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,12 +20,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.second.screens.bottom.CustomBottomAppBar
+import com.example.second.ui.screens.bottom.CustomBottomAppBar
 import com.example.second.ui.theme.FirstTheme
-import com.example.second.screens.home.Home
-import com.example.second.screens.navi.Navi
-import com.example.second.screens.steam.SteamScreen
-import com.example.second.screens.diceroller.DiceRollerScreen
+import com.example.second.ui.screens.home.Home
+import com.example.second.ui.screens.navi.Navi
+import com.example.second.ui.screens.steam.SteamScreen
+import com.example.second.ui.screens.diceroller.DiceRollerScreen
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.second.viewmodel.MainViewModel
 

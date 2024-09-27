@@ -1,4 +1,4 @@
-package com.example.second.screens.diceroller
+package com.example.second.ui.screens.diceroller
 
 import DiceRollerViewModel
 import androidx.compose.foundation.Image
