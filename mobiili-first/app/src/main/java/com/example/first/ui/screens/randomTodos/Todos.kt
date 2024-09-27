@@ -13,6 +13,30 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.first.model.TodoModel
 import com.example.first.viewmodel.TodoViewModel
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+
+const val BASE_URL = "https://jsonplaceholder.typicode.com"
+
+interface TodosApi {
+    @GET("todos")
+    suspend fun getTodos(): List<TodoModel>
+
+    companion object {
+        var todosService: TodosApi? = null
+
+        fun getInstance(): TodosApi {
+            if (todosService === null) {
+                todosService = Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build().create(TodosApi::class.java)
+            }
+            return todosService!!
+        }
+    }
+}
 
 @Composable
 fun TodoScreen(navController: NavController, todoViewModel: TodoViewModel = viewModel()) {
