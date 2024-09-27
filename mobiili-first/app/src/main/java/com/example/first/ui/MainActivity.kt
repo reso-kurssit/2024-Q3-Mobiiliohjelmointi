@@ -17,7 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.first.ui.screens.bmi.Bmi
-import com.example.first.ui.screens.bmiAndViewModel.BmiVM
+import com.example.first.ui.screens.bmi2.BmiVM
 import com.example.first.ui.screens.bottom.CustomBottomAppBar
 import com.example.first.ui.screens.loginform.LoginForm
 import com.example.first.ui.screens.calories.CalorieScreen

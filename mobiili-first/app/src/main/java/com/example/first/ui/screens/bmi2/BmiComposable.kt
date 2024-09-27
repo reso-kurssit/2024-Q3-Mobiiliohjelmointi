@@ -1,4 +1,4 @@
-package com.example.first.ui.screens.bmiAndViewModel
+package com.example.first.ui.screens.bmi2
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

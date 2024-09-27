@@ -1,0 +1,38 @@
+App for grade 4 should have all features listed:
+
+- App contains some software logic. It could be, for example, performing some
+calculation (complexity similar to Calories or Alcometer exercises) or
+retrieving (simple) data from API.
+- ViewModel class must be implemented for holding state and functionality for UI
+(composables)
+- UI needs to suitable for mobile app.
+Modify theme so your app does not use default values.
+- All the strings should be saved under resource file.
+- Implement navigation and a simple screen.
+App must have at least two screens (main and info).
+
+
+App for grade 5 should have all features listed for grade 4 and following:
+
+- App must use API service and display data retrieved from the service.
+- App must implement MVVM architecture.
+- Code is divided into separate files and packages.
+- Possible errors are handled
+(e.g., if API does not return anything or there is an error,
+a message is displayed).
+- When data is loaded on the background, a message (or spinner) is displayed to
+the user on UI.
+
+App for grade 5 may contain also following features:
+- Displaying an image (using Coil library).
+
+
+
+Return your app by announcing address to the public GIT repository on Moodle.
+Upload text file containing required information to the assignment box.
+In case API keys or other information is required inform that as well.
+Do not use any services that needs payment or registration from the teacher.
+
+Create readme file to the project, where you describe how to configure app
+(e.g. where to place required API key) so it can build and tested.
+Describe also, what is the purpose of your app and how it is used.
