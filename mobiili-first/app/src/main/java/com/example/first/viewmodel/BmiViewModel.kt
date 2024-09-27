@@ -1,6 +1,7 @@
-package com.example.first.screens.bmiAndViewModel
+package com.example.first.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.first.model.BmiModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

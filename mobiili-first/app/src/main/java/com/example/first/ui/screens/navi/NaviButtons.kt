@@ -1,4 +1,4 @@
-package com.example.first.screens.navi
+package com.example.first.ui.screens.navi
 
 import android.app.Activity
 import androidx.compose.foundation.background
@@ -131,6 +131,13 @@ fun NaviButtons(navController: NavController) {
             DropdownMenuItem(
                 { Text(text = stringResource(R.string.week7), color = SolidBlue) },
                 onClick = { navController.navigate("bmiviewmodel")
+                    expanded = false
+                }
+            )
+
+            DropdownMenuItem(
+                { Text(text = stringResource(R.string.week8), color = SolidBlue) },
+                onClick = { navController.navigate("randomTodos")
                     expanded = false
                 }
             )

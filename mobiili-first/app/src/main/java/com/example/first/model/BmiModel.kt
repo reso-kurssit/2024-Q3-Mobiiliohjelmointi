@@ -1,4 +1,4 @@
-package com.example.first.screens.bmiAndViewModel
+package com.example.first.model
 
 data class BmiModel(
     val height: String = "",

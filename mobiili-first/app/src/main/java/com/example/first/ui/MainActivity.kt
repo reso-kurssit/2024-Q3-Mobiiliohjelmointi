@@ -1,4 +1,4 @@
-package com.example.first
+package com.example.first.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,18 +16,19 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.first.screens.bmi.Bmi
-import com.example.first.screens.bmiAndViewModel.BmiVM
-import com.example.first.screens.bottom.CustomBottomAppBar
-import com.example.first.screens.loginform.LoginForm
-import com.example.first.screens.calories.CalorieScreen
-import com.example.first.screens.home.Home
-import com.example.first.screens.navi.NaviButtons
-import com.example.first.screens.scaffoldnavi.InfoScreen
-import com.example.first.screens.theming.ColorSwitchingButtons
-import com.example.first.screens.scaffoldnavi.MainTopBar
-import com.example.first.screens.scaffoldnavi.SettingsScreen
-import com.example.first.screens.scaffoldnavi.Week6MainScreen
+import com.example.first.ui.screens.bmi.Bmi
+import com.example.first.ui.screens.bmiAndViewModel.BmiVM
+import com.example.first.ui.screens.bottom.CustomBottomAppBar
+import com.example.first.ui.screens.loginform.LoginForm
+import com.example.first.ui.screens.calories.CalorieScreen
+import com.example.first.ui.screens.home.Home
+import com.example.first.ui.screens.navi.NaviButtons
+import com.example.first.ui.screens.randomTodos.TodoScreen
+import com.example.first.ui.screens.scaffoldnavi.InfoScreen
+import com.example.first.ui.screens.theming.ColorSwitchingButtons
+import com.example.first.ui.screens.scaffoldnavi.MainTopBar
+import com.example.first.ui.screens.scaffoldnavi.SettingsScreen
+import com.example.first.ui.screens.scaffoldnavi.Week6MainScreen
 import com.example.first.ui.theme.FirstTheme
 
 class MainActivity : ComponentActivity() {
@@ -80,6 +81,7 @@ class MainActivity : ComponentActivity() {
                 composable("info") { InfoScreen(navController) }
                 composable("settings") { SettingsScreen(navController) }
                 composable("bmiviewmodel") { BmiVM(navController) }
+                composable("randomTodos") { TodoScreen(navController) }
             }
         }
     }

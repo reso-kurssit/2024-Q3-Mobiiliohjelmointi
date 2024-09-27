@@ -1,4 +1,4 @@
-package com.example.first.screens.theming
+package com.example.first.ui.screens.theming
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

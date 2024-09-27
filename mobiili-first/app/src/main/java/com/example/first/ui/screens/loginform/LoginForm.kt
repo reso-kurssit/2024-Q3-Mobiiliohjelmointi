@@ -1,4 +1,4 @@
-package com.example.first.screens.loginform
+package com.example.first.ui.screens.loginform
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

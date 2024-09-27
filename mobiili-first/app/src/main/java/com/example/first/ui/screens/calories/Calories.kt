@@ -1,4 +1,4 @@
-package com.example.first.screens.calories
+package com.example.first.ui.screens.calories
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

@@ -1,4 +1,4 @@
-package com.example.first.screens.scaffoldnavi
+package com.example.first.ui.screens.scaffoldnavi
 
 import androidx.compose.foundation.background
 import androidx.compose.material.icons.Icons
