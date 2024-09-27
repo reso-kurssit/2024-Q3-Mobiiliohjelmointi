@@ -128,6 +128,13 @@ fun NaviButtons(navController: NavController) {
                 }
             )
 
+            DropdownMenuItem(
+                { Text(text = stringResource(R.string.week7), color = SolidBlue) },
+                onClick = { navController.navigate("bmiviewmodel")
+                    expanded = false
+                }
+            )
+
         }
 
        }

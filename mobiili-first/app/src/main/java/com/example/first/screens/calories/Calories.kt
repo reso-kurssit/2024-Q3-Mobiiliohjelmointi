@@ -34,6 +34,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
@@ -54,15 +55,24 @@ fun CalorieScreen(navController: NavController) {
         .fillMaxWidth()
         .padding(vertical = 8.dp)
 
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
     Column(
         modifier = Modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Heading(title = stringResource(R.string.titleWeek5))
-        WeightField(weightInput = weightInput, onValueChange = { weightInput = it })
-        GenderChoice(ifTrueMaleIfFalseFemale, setGender = { ifTrueMaleIfFalseFemale = it})
-        IntensityList(onClick = {intensity = it})
-        Text (text = result.toString(), color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.Bold)
+        WeightField(weightInput = weightInput, onValueChange = { weightInput = it }, textStyle = textStyle)
+        GenderChoice(ifTrueMaleIfFalseFemale, setGender = { ifTrueMaleIfFalseFemale = it}, textStyle = textStyle)
+        IntensityList(onClick = {intensity = it}, textStyle = textStyle)
+        Text (
+            text = result.toString(),
+            color = MaterialTheme.colorScheme.onSecondaryContainer,
+            fontWeight = FontWeight.Bold,
+            style = textStyle
+        )
         Calculation(ifTrueMaleIfFalseFemale = ifTrueMaleIfFalseFemale, weight = weight, intensity = intensity, setResult = {result = it})
     }
 }
@@ -74,7 +84,6 @@ fun DefaultPreview() {
     }
 }
 
-
 @Composable
 fun Heading(title: String) {
     Text(
@@ -85,47 +94,48 @@ fun Heading(title: String) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 16.dp, bottom = 16.dp)
-
     )
-
 }
 
 @Composable
-fun WeightField (weightInput: String, onValueChange:(String) -> Unit) {
+fun WeightField (weightInput: String, onValueChange: (String) -> Unit, textStyle: TextStyle) {
     OutlinedTextField(
         value = weightInput,
         onValueChange = onValueChange,
         label = { Text(text = "Enter weight") },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        textStyle = textStyle
     )
-
 }
 
 @Composable
-fun GenderChoice (ifTrueMaleIfFalseFemale: Boolean, setGender:(Boolean) -> Unit) {
+fun GenderChoice (
+    ifTrueMaleIfFalseFemale: Boolean,
+    setGender: (Boolean) -> Unit,
+    textStyle: TextStyle
+) {
     Column (Modifier.selectableGroup()) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             RadioButton (
                 selected = ifTrueMaleIfFalseFemale,
                 onClick = {setGender(true)}
             )
-            Text(text = "Male")
+            Text(text = "Male", style = textStyle)
         }
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             RadioButton(
                 selected = !ifTrueMaleIfFalseFemale,
                 onClick = { setGender(false) })
-            Text (text = "Female")
+            Text (text = "Female", style = textStyle)
         }
-
     }
 }
 
 @Composable
-fun IntensityList (onClick:(Float) -> Unit) {
+fun IntensityList (onClick: (Float) -> Unit, textStyle: TextStyle) {
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf("Light") }
     var textFieldSize by remember { mutableStateOf(Size.Zero) }
@@ -148,7 +158,8 @@ fun IntensityList (onClick:(Float) -> Unit) {
             trailingIcon = {
                 Icon(icon, "contentDescription",
                     Modifier.clickable { expanded = !expanded })
-            }
+            },
+            textStyle = textStyle
         )
         DropdownMenu(
             expanded = expanded,
@@ -176,7 +187,8 @@ fun IntensityList (onClick:(Float) -> Unit) {
                             onClick(intensity)
                             expanded = false
                         }
-                        .padding(8.dp)
+                        .padding(8.dp),
+                    style = textStyle
                 )
             }
         }

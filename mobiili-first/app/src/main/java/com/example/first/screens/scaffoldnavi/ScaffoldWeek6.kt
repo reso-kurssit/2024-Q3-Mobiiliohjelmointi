@@ -68,19 +68,29 @@ fun reusableModifier(): Modifier {
 
 @Composable
 fun InfoScreen(navController: NavController) {
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
     Box(
         modifier = reusableModifier()
     ) {
-        Text(text = stringResource(R.string.week6infoContent), modifier = Modifier.padding(16.dp))
+        Text(text = stringResource(R.string.week6infoContent), modifier = Modifier.padding(16.dp),
+            style = textStyle )
     }
 }
 
 @Composable
 fun Week6MainScreen(navController: NavController) {
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
     Box(
         modifier = reusableModifier()
     ) {
-        Text(text = stringResource(R.string.week6mainContent), modifier = Modifier.padding(16.dp))
+        Text(text = stringResource(R.string.week6mainContent), modifier = Modifier.padding(16.dp),
+            style = textStyle)
 
         Button(
             onClick = { navController.navigate("home") },
@@ -88,16 +98,22 @@ fun Week6MainScreen(navController: NavController) {
                 .padding(start = 16.dp, end = 16.dp, top = 84.dp)
 
         ) {
-            Text(text = stringResource(R.string.gotoHome))
+            Text(text = stringResource(R.string.gotoHome),
+                style = textStyle)
         }
     }
 }
 
 @Composable
 fun SettingsScreen(navController: NavController) {
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
     Box(
         modifier = reusableModifier()
     ) {
-        Text(text = stringResource(R.string.week6settingsContent), modifier = Modifier.padding(16.dp))
+        Text(text = stringResource(R.string.week6settingsContent), modifier = Modifier.padding(16.dp),
+            style = textStyle)
     }
 }

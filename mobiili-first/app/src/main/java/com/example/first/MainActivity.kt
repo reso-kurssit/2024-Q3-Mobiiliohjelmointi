@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.first.screens.bmi.Bmi
+import com.example.first.screens.bmiAndViewModel.BmiVM
 import com.example.first.screens.bottom.CustomBottomAppBar
 import com.example.first.screens.loginform.LoginForm
 import com.example.first.screens.calories.CalorieScreen
@@ -78,6 +79,7 @@ class MainActivity : ComponentActivity() {
                 composable("main") { Week6MainScreen(navController) }
                 composable("info") { InfoScreen(navController) }
                 composable("settings") { SettingsScreen(navController) }
+                composable("bmiviewmodel") { BmiVM(navController) }
             }
         }
     }

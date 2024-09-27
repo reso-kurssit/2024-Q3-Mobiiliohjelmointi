@@ -24,48 +24,65 @@ fun Home(navController: NavController) {
     val textModifier = Modifier
         .padding(horizontal = 12.dp)
 
+    val textStyle = MaterialTheme.typography.bodyLarge.copy(
+        color = MaterialTheme.colorScheme.onSecondaryContainer
+    )
+
     Column(
         modifier = Modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
+
     ) {
         Heading(title = stringResource(R.string.titleHome))
 
         Text (text = stringResource(R.string.assignmentLocations),
-            style = MaterialTheme.typography.titleLarge)
+            style = MaterialTheme.typography.titleLarge.copy(
+                color = MaterialTheme.colorScheme.primary
+            ))
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week1_))
+            Text(text = stringResource(R.string.week1_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week2_))
+            Text(text = stringResource(R.string.week2_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week3_))
+            Text(text = stringResource(R.string.week3_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week4_))
+            Text(text = stringResource(R.string.week4_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week5_))
+            Text(text = stringResource(R.string.week5_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week6_))
+            Text(text = stringResource(R.string.week6_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week7_))
+            Text(text = stringResource(R.string.week7_),
+                style = textStyle )
         }
 
         Row(modifier = textModifier) {
-            Text(text = stringResource(R.string.week8_))
+            Text(text = stringResource(R.string.week8_),
+                style = textStyle )
         }
 
-        Text (text = stringResource(R.string.anotherAssignmet), modifier = textModifier)
+        Text (text = stringResource(R.string.anotherAssignmet),
+            style = textStyle,
+            modifier = textModifier)
     }
 }
 
