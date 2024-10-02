@@ -27,8 +27,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.example.second.R
-import com.example.second.ui.theme.QuiteDark
-import com.example.second.viewmodel.MainViewModel
 import java.util.Locale
 
 val customFont = FontFamily(
@@ -36,7 +34,7 @@ val customFont = FontFamily(
 )
 
 @Composable
-fun Navi(navController: NavController,  mainViewModel: MainViewModel) {
+fun Navi(navController: NavController) {
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val activity = context as? Activity
@@ -81,12 +79,6 @@ fun Navi(navController: NavController,  mainViewModel: MainViewModel) {
             Box(modifier = Modifier.size(36.dp))
         }
 
-        if (mainViewModel.isLoading.collectAsState().value) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
-                color = MaterialTheme.colorScheme.primary
-            )
-        }
 
         DropdownMenu(
             expanded = expanded,
@@ -95,28 +87,28 @@ fun Navi(navController: NavController,  mainViewModel: MainViewModel) {
         ) {
 
             DropdownMenuItem(
-                { Text(text = "Main", color = SolidBlue) },
+                { Text(stringResource(R.string.naviHome), color = SolidBlue) },
                 onClick = { navController.navigate("home")
                     expanded = false
                 }
             )
 
             DropdownMenuItem(
-                { Text(text = "News", color = SolidBlue) },
+                { Text(stringResource(R.string.naviNews), color = SolidBlue) },
                 onClick = { navController.navigate("steam")
                     expanded = false
                 }
             )
 
             DropdownMenuItem(
-                { Text(text = "D20 Roller", color = SolidBlue) },
+                { Text(stringResource(R.string.naviRoller), color = SolidBlue) },
                 onClick = { navController.navigate("dice")
                     expanded = false
                 }
             )
 
             DropdownMenuItem(
-                { Text(text = "FI") },
+                { Text(stringResource(R.string.naviFI), color = SolidBlue) },
                 onClick = {
                     val locale = Locale("fi")
                     Locale.setDefault(locale)
@@ -135,7 +127,7 @@ fun Navi(navController: NavController,  mainViewModel: MainViewModel) {
             )
 
             DropdownMenuItem(
-                { Text(text = "EN") },
+                { Text(stringResource(R.string.naviEN), color = SolidBlue) },
                 onClick = {
                     val locale = Locale.ENGLISH
                     Locale.setDefault(locale)

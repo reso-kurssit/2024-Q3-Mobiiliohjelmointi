@@ -22,7 +22,15 @@
     <string name="criticalSuccess">Critical Success!</string>
     <string name="criticalFailure">Critical Failure!</string>
 
+    <string name="naviHome">Main</string>
+    <string name="naviNews">News</string>
+    <string name="naviRoller">D20 Roller</string>
+    <string name="naviFI">FI</string>
+    <string name="naviEN">EN</string>
+
+
     <string-array name="dice_types">
         <item>D20</item>
     </string-array>
+
 </resources>

@@ -23,6 +23,12 @@
     <string name="criticalSuccess">Kriittinen onnistuminen!</string>
     <string name="criticalFailure">Kriittinen epäonnistuminen!</string>
 
+    <string name="naviHome">Alku</string>
+    <string name="naviNews">Uutiset</string>
+    <string name="naviRoller">D20 Noppa</string>
+    <string name="naviFI">FI</string>
+    <string name="naviEN">EN</string>
+
     <string-array name="dice_types">
         <item>D20</item>
     </string-array>

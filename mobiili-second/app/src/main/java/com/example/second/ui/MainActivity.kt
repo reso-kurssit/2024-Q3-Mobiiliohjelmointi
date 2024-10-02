@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
         val isLoading by mainViewModel.isLoading.collectAsState()
 
         Scaffold(
-            topBar = { Navi(navController, mainViewModel) },
+            topBar = { Navi(navController) },
             bottomBar = { CustomBottomAppBar(navController) }
         ) { innerPadding ->
             if (isLoading) {
